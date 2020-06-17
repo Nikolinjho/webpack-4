@@ -1,0 +1,32 @@
+@import "./normalize.css";
+
+@import "./font.css";
+
+
+.container{
+    font-family: Inter;
+    padding: 15px;
+    color: red;
+}
+
+h1{
+    text-align: center;
+}
+
+.logo{
+    background-image: url(../assets/Banana1.jpg);
+    background-size: cover;
+    width: 550px;
+    height: 600px;
+    display: flex;
+}
+
+ul{
+    li{
+        color: black;
+        font-size: 22px;
+        &:hover{
+            color: blue;
+        }
+    }
+}
