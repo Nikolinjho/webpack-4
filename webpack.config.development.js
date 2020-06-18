@@ -26,6 +26,7 @@ const webpackConfig = merge(commonConfig, {
         new FriendlyErrorsPlugin()
     ],
     devServer: {
+        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         historyApiFallback: true,
         hot: true,
