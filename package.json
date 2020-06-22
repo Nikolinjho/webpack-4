@@ -54,7 +54,10 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "~2.24",
     "webpack-merge": "~4.2",
-    "xml-loader": "^1.2.1"
+    "xml-loader": "^1.2.1",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-simple-vars": "^5.0.2"
   },
   "dependencies": {
     "@babel/core": "^7.10.1",
