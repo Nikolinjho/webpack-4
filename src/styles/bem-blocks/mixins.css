@@ -1,0 +1,14 @@
+/* @mixin reset-btn */
+
+@define-mixin reset-btn  {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    @mixin font Montserrat, 14px;
+  }
+ 
+
+@define-mixin font $name, $pix{
+    font-family: $name;
+    font-size: $pix;
+} 
