@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -30,6 +31,7 @@ const webpackConfig = {
         }
     },
     plugins: [
+        new UnusedFilesWebpackPlugin(),
         new HTMLWebpackPlugin({
             // title: "kran", без template
             template: "index.html",
@@ -39,6 +41,11 @@ const webpackConfig = {
         }),
         // new VueLoaderPlugin(),
         new CleanWebpackPlugin({
+        }),
+        new webpack.HashedModuleIdsPlugin({ 
+            hashFunction: 'md4', 
+            hashDigest: 'base64', 
+            hashDigestLength: 8,
         }),
 
         // new CopyWebpackPlugin({
