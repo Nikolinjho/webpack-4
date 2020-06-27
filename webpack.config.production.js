@@ -10,6 +10,8 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 const commonConfig = require('./webpack.config.common');
 
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -54,4 +56,4 @@ if (!isProd) {
     }
 }
 
-module.exports = webpackConfig;
+module.exports = smp.wrap(webpackConfig);
