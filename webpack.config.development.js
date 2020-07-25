@@ -7,8 +7,6 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const commonConfig         = require('./webpack.config.common');
 
 
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
 
 
 
@@ -40,4 +38,4 @@ const webpackConfig = merge(commonConfig, {
     }
 });
 
-module.exports = smp.wrap(webpackConfig);
+module.exports = webpackConfig;
