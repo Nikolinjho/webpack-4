@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require('webpack');
+require('dotenv').config(); // 
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -7,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+
 
 const isDev = process.env.NODE_ENV === "development"
 const isProd = !isDev;
@@ -55,6 +57,7 @@ const webpackConfig = {
             hashDigestLength: 8,
         }),
         new webpack.NoEmitOnErrorsPlugin(),
+
 
         // new CopyWebpackPlugin({
         //     patterns: [

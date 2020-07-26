@@ -15,6 +15,18 @@ const smp = new SpeedMeasurePlugin();
 
 const isProd = process.env.NODE_ENV === 'production';
 
+const pushPlugins = () => {
+    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+        .BundleAnalyzerPlugin;
+    const Visualizer = require('webpack-visualizer-plugin');
+    return [
+        new Visualizer({
+            filename: './statistics.html',
+        }),
+        new BundleAnalyzerPlugin()
+    ];
+};
+
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
     optimization: {
@@ -60,18 +72,10 @@ const webpackConfig = merge(commonConfig, {
         ],
     },
     plugins: [
-
+        ...pushPlugins()
         // new webpack.HashedModuleIdsPlugin()
     ]
 });
 
-if (!isProd) {
-    webpackConfig.devtool = 'source-map';
-
-    if (process.env.npm_config_report) {
-        const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-        webpackConfig.plugins.push(new BundleAnalyzerPlugin());
-    }
-}
 
 module.exports = smp.wrap(webpackConfig);
