@@ -1,18 +1,20 @@
 
 @import "./lib/reset.css";
 
+
+/* vars */
+@import './bem-blocks/variables.css';
+
 /* mixin'ы */
 @import "./bem-blocks/mixins.css";
 
-/* main code */
+/* main code */ 
 /* @import "./bem-blocks/header.css" ; */
 /* @import "./bem-blocks/bem-content.css" ; */
 /* @import "./bem-blocks/footer.css" ; */
 /* links, btns */
 /* @import "./bem-blocks/bem-btn.css" ; */
 
-/* vars */
-@import './bem-blocks/variables.css';
 
   
 *{
