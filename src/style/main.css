@@ -1,0 +1,45 @@
+
+@import "./lib/reset.css";
+
+/* mixin'ы */
+@import "./bem-blocks/mixins.css";
+
+/* main code */
+/* @import "./bem-blocks/header.css" ;
+@import "./bem-blocks/bem-content.css" ;
+@import "./bem-blocks/footer.css" ; */
+/* links, btns */
+/* @import "./bem-blocks/bem-btn.css" ; */
+  
+
+/* vars */
+@import './bem-blocks/variables.css';
+
+
+
+*{
+ box-sizing: border-box; 
+  
+}       
+
+html, body{
+    height: 100%;
+}
+
+body{
+    padding: 0px;
+    margin: 0;
+    font-family: $font;
+    font-size: 16px;
+    min-height: 100%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+

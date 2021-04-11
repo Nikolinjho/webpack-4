@@ -1,10 +1,11 @@
 'use strict';
 
 const path = require("path");
-const webpack              = require('webpack');
-const merge                = require('webpack-merge');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const commonConfig         = require('./webpack.config.common');
+const commonConfig = require('./webpack.config.common');
+
 
 
 
@@ -13,7 +14,6 @@ const commonConfig         = require('./webpack.config.common');
 const webpackConfig = merge(commonConfig, {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
-
     optimization: {
         runtimeChunk: 'single',
         splitChunks: {
@@ -36,6 +36,7 @@ const webpackConfig = merge(commonConfig, {
             normal: true
         }
     }
+
 });
 
 module.exports = webpackConfig;
